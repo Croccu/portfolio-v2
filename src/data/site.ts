@@ -6,7 +6,7 @@ export const siteConfig = {
   url: "https://ricopaum.dev",
   links: {
     github: "https://github.com/Croccu",
-    linkedin: "https://linkedin.com/in/ricopaum",
+    linkedin: "https://linkedin.com/in/rico-paum-a0b07919b",
     email: "rico.paum@me.com",
   },
 };
