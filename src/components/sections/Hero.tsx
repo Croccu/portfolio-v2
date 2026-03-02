@@ -8,12 +8,12 @@ import { ArrowDown, Mail } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100dvh] items-center overflow-hidden">
+    <section className="relative flex min-h-dvh items-center overflow-hidden">
       {/* Animated gradient background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-1/4 -top-1/4 h-[600px] w-[600px] rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -bottom-1/4 -right-1/4 h-[500px] w-[500px] rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_var(--background)_70%)]" />
+        <div className="absolute -left-1/4 -top-1/4 h-150 w-150 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute -bottom-1/4 -right-1/4 h-125 w-125 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--background)_70%)]" />
       </div>
 
       <Container className="relative z-10">
@@ -39,7 +39,7 @@ export function Hero() {
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
             I build automation tools and web applications that solve real
             problems. Currently studying Computer Science at Tallinn University
-            while working in fraud prevention and fintech.
+            while working in fraud prevention and KYC.
           </p>
 
           <motion.div

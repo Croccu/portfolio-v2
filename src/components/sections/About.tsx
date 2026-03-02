@@ -10,16 +10,16 @@ export function About() {
       <div className="grid gap-12 lg:grid-cols-2">
         <div className="space-y-4">
           <p className="leading-relaxed text-muted-foreground">
-            I&apos;m a fraud &amp; risk analyst with practical software
-            development experience gained through academic and personal
-            projects. Experienced in KYC, transaction monitoring, and building
-            internal tools to streamline verification processes.
+            Combining risk analysis experience with a growing focus on building
+            software and leading product-driven initiatives. Working at the
+            intersection of operations and technology, I&apos;m increasingly
+            drawn to building products from idea to execution.     Identifying real problems and developing practical, scalable
+            solutions.
           </p>
           <p className="leading-relaxed text-muted-foreground">
-            Passionate about developing automation solutions that simplify
-            repetitive tasks and improve operational efficiency. Currently
-            studying Computer Science at Tallinn University, having previously
-            completed a web development bootcamp at LeWagon.
+            Currently studying Computer Science at Tallinn
+            University, having previously completed a web development bootcamp
+            at LeWagon.
           </p>
         </div>
 

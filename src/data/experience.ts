@@ -12,8 +12,8 @@ export const experience: Experience[] = [
     role: "Fraud, Risk & Payments Analyst",
     period: "2024 — Present",
     description:
-      "Ensuring compliance with KYC regulations by verifying customer identities against global databases. Analyzing customer data to detect anomalies and improve fraud prevention. Automated daily and monthly reporting using Python, reducing manual workload. Created a tool for checking MRZ validity through check digits.",
-    techStack: ["Python", "SQL", "Power BI", "Process Automation"],
+      "Ensuring compliance with KYC regulations by verifying customer identities against global databases. Created a tool for checking MRZ validity through check digits. Currently developing Python-based tools to improve internal reporting workflows.",
+    techStack: ["Fraud Detection", "KYC", "Risk Analysis", "Compliance", "Identity Verification"],
   },
   {
     company: "Monese",

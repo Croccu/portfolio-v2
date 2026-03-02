@@ -14,7 +14,7 @@ export function Experience() {
     >
       <div className="relative space-y-0">
         {/* Timeline line */}
-        <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border/60" />
+        <div className="absolute left-1.75 top-2 bottom-2 w-px bg-border/60" />
 
         {experience.map((exp, i) => (
           <motion.div
@@ -26,7 +26,7 @@ export function Experience() {
             className="relative pl-8 pb-10 last:pb-0"
           >
             {/* Timeline dot */}
-            <div className="absolute left-0 top-2 h-[15px] w-[15px] rounded-full border-2 border-border bg-background" />
+            <div className="absolute left-0 top-2 h-3.75 w-3.75 rounded-full border-2 border-border bg-background" />
 
             <div className="space-y-2">
               <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
