@@ -13,7 +13,7 @@ export function About() {
             Combining risk analysis experience with a growing focus on building
             software and leading product-driven initiatives. Working at the
             intersection of operations and technology, I&apos;m increasingly
-            drawn to building products from idea to execution.     Identifying real problems and developing practical, scalable
+            drawn to building products from idea to execution. Identifying real problems and developing practical, scalable
             solutions.
           </p>
           <p className="leading-relaxed text-muted-foreground">

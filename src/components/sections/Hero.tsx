@@ -11,6 +11,7 @@ export function Hero() {
     <section className="relative flex min-h-dvh items-center overflow-hidden">
       {/* Animated gradient background */}
       <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[url('/topography.svg')] bg-repeat opacity-100" />
         <div className="absolute -left-1/4 -top-1/4 h-150 w-150 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute -bottom-1/4 -right-1/4 h-125 w-125 rounded-full bg-primary/5 blur-3xl" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--background)_70%)]" />
