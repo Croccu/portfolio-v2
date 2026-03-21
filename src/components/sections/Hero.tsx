@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/layout/Container";
 import { motion } from "framer-motion";
 import { ArrowDown, Mail } from "lucide-react";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -18,51 +19,70 @@ export function Hero() {
       </div>
 
       <Container className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="max-w-2xl"
-        >
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="mb-4 text-sm font-medium tracking-widest text-muted-foreground uppercase"
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:justify-start lg:gap-16">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
+            className="shrink-0"
           >
-            Developer &middot; Fraud &amp; Risk Analyst
-          </motion.p>
-
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            {siteConfig.name}
-          </h1>
-
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
-            I build automation tools and web applications that solve real
-            problems. Currently studying Computer Science at Tallinn University
-            while working in fraud prevention and KYC.
-          </p>
+            <div className="relative h-64 w-64 overflow-hidden rounded-full border-2 border-primary/20 shadow-xl sm:h-72 sm:w-72">
+              <Image
+                src="/images/hero/profile.jpg"
+                alt={siteConfig.name}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="mt-8 flex flex-wrap gap-3"
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="max-w-2xl"
           >
-            <Button asChild size="lg">
-              <a href="#projects">
-                View Projects
-                <ArrowDown className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <a href="#contact">
-                Contact
-                <Mail className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="mb-4 text-sm font-medium tracking-widest text-muted-foreground uppercase"
+            >
+              Developer &middot; Fraud &amp; Risk Analyst
+            </motion.p>
+
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+              {siteConfig.name}
+            </h1>
+
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
+              I build automation tools and web applications that solve real
+              problems. Currently studying Computer Science at Tallinn University
+              while working in fraud prevention and KYC.
+            </p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className="mt-8 flex flex-wrap gap-3"
+            >
+              <Button asChild size="lg">
+                <a href="#projects">
+                  View Projects
+                  <ArrowDown className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href="#contact">
+                  Contact
+                  <Mail className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </Container>
     </section>
   );
