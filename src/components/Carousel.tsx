@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useState } from "react";
 
@@ -51,14 +52,25 @@ export function Carousel({ images, alt, className }: CarouselProps) {
 
         <div className="relative w-full overflow-hidden rounded-lg">
           <div className="relative aspect-[16/8.5]">
-            <Image
-              src={images[current]}
-              alt={`${alt} — image ${current + 1}`}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 100vw, 1280px"
-              priority={current === 0}
-            />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={images[current]}
+                  alt={`${alt} — image ${current + 1}`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 1280px"
+                  priority={current === 0}
+                />
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
 
