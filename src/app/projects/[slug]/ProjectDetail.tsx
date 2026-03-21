@@ -15,8 +15,9 @@ interface ProjectDetailProps {
 
 export function ProjectDetail({ project }: ProjectDetailProps) {
   return (
-    <main className="min-h-screen pb-24 pt-12">
-      <Container>
+    <main className="relative min-h-screen pb-24 pt-12">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(0_0%_15%)_0%,transparent_80%)]" />
+      <Container className="max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,12 +40,22 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
             <p className="text-lg text-muted-foreground">{project.tagline}</p>
           </div>
 
-          {/* Carousel */}
-          <Carousel
-            images={project.images}
-            alt={project.title}
-            className="mb-10"
-          />
+        </motion.div>
+      </Container>
+
+      {/* Carousel — wider than content */}
+      <div className="relative mb-10">
+        <div className="relative mx-auto w-full max-w-[90rem] px-6 sm:px-8 py-6">
+          <Carousel images={project.images} alt={project.title} />
+        </div>
+      </div>
+
+      <Container className="max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
 
           {/* Content grid */}
           <div className="grid gap-10 lg:grid-cols-3">
