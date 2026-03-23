@@ -7,6 +7,7 @@ export interface Project {
   techStack: string[];
   githubUrl?: string;
   liveUrl?: string;
+  warning?: string;
   featured: boolean;
 }
 
@@ -22,12 +23,14 @@ export const projects: Project[] = [
       "/images/projects/traffic-simulator/traffic-sim-demo.png",
       "/images/projects/traffic-simulator/traffic-sim-levels.png",
       "/images/projects/traffic-simulator/traffic-sim-rocca.png",
-      "/images/projects/traffic-simulator/traffic-sim-kardiorg.png",
+      "/images/projects/traffic-simulator/traffic-sim-kadriorg.png",
       "/images/projects/traffic-simulator/traffic-sim-mustamae.png",
     ],
     techStack: ["C#", "Unity", "Game Development"],
     githubUrl: "https://github.com/Croccu/traffic-simulator",
     liveUrl: "https://croccu.github.io/traffic-sim-build/",
+    warning:
+      "This is an outdated build. You may encounter bugs, visual glitches, or unexpected behaviour during gameplay.",
     featured: true,
   },
   {

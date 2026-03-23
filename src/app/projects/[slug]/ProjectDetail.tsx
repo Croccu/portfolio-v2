@@ -5,18 +5,79 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Carousel } from "@/components/Carousel";
 import { Container } from "@/components/layout/Container";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowLeft, ExternalLink, Github, TriangleAlert } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 
 interface ProjectDetailProps {
   project: Project;
 }
 
 export function ProjectDetail({ project }: ProjectDetailProps) {
+  const [showWarning, setShowWarning] = useState(false);
+
+  function handleLiveDemo(e: React.MouseEvent) {
+    if (project.warning) {
+      e.preventDefault();
+      setShowWarning(true);
+    }
+  }
+
   return (
     <main className="relative flex h-dvh flex-col overflow-hidden py-6">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(0_0%_15%)_0%,transparent_80%)]" />
+
+      {/* Warning modal */}
+      <AnimatePresence>
+        {showWarning && (
+          <>
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
+              onClick={() => setShowWarning(false)}
+            />
+            <motion.div
+              key="modal"
+              initial={{ opacity: 0, scale: 0.95, y: 8 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 8 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="fixed left-1/2 top-1/2 z-50 w-full max-w-sm -translate-x-1/2 -translate-y-1/2 rounded-xl border border-border/60 bg-background p-6 shadow-xl"
+            >
+              <div className="mb-4 flex items-center gap-3">
+                <TriangleAlert className="h-5 w-5 shrink-0 text-yellow-500" />
+                <h2 className="font-semibold">Heads up</h2>
+              </div>
+              <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
+                {project.warning}
+              </p>
+              <div className="flex gap-3">
+                <Button
+                  variant="outline"
+                  className="flex-1"
+                  onClick={() => setShowWarning(false)}
+                >
+                  Cancel
+                </Button>
+                <Button
+                  className="flex-1"
+                  onClick={() => {
+                    setShowWarning(false);
+                    window.open(project.liveUrl, "_blank", "noopener,noreferrer");
+                  }}
+                >
+                  Continue
+                </Button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       {/* Header */}
       <Container className="max-w-7xl shrink-0">
@@ -105,6 +166,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={handleLiveDemo}
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Live Demo
