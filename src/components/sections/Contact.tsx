@@ -24,6 +24,8 @@ export function Contact() {
     const form = e.currentTarget;
     const data = new FormData(form);
     data.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "");
+    data.append("from_name", data.get("email") as string);
+    data.append("subject", `${data.get("name")} sent you a message`);
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {

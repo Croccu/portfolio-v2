@@ -10,7 +10,7 @@ import Image from "next/image";
 export function Hero() {
   return (
     <section className="relative flex min-h-dvh items-center overflow-hidden">
-      {/* Animated gradient background */}
+      {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[url('/topography.svg')] bg-repeat opacity-100" />
         <div className="absolute -left-1/4 -top-1/4 h-150 w-150 rounded-full bg-primary/5 blur-3xl" />
