@@ -90,4 +90,19 @@ export const projects: Project[] = [
     liveUrl: "https://croccu.github.io/flashcards-app/",
     featured: true,
   },
+  {
+    slug: "hinnavaatlus-redesign",
+    title: "Hinnavaatlus Forum Redesign",
+    tagline: "Modern UI redesign of the Hinnavaatlus forum",
+    description:
+      "A UI/UX redesign concept for the Hinnavaatlus forum, focused purely on visual design and front-end aesthetics — not a full-stack application. Features a forum home with categories and discussions, category and thread views, light/dark theme support, and responsive layouts. Built as a UI aesthetics course project at Tallinn University.",
+    images: [
+      "/images/projects/hinnavaatlus/hinnavaatlus-main.png",
+      "/images/projects/hinnavaatlus/hinnavaatlus-category.png",
+      "/images/projects/hinnavaatlus/hinnavaatlus-topic.png",
+    ],
+    techStack: ["TypeScript", "React", "Tailwind CSS", "Vite", "shadcn/ui"],
+    githubUrl: "https://github.com/Croccu/hinnavaatlus_revamped",
+    featured: true,
+  },
 ];
