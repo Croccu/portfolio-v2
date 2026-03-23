@@ -17,9 +17,17 @@ export const projects: Project[] = [
     tagline: "Interactive traffic simulation built in Unity",
     description:
       "A traffic simulation game built with Unity and C#. Features realistic vehicle behavior, intersection management, and traffic flow visualization. Designed as a systems-level project exploring game development, physics-based movement, and real-time state management.",
-    images: ["/images/projects/traffic-simulator-1.jpg"],
+    images: [
+      "/images/projects/traffic-simulator/traffic-sim-main.png",
+      "/images/projects/traffic-simulator/traffic-sim-demo.png",
+      "/images/projects/traffic-simulator/traffic-sim-levels.png",
+      "/images/projects/traffic-simulator/traffic-sim-rocca.png",
+      "/images/projects/traffic-simulator/traffic-sim-kardiorg.png",
+      "/images/projects/traffic-simulator/traffic-sim-mustamae.png",
+    ],
     techStack: ["C#", "Unity", "Game Development"],
     githubUrl: "https://github.com/Croccu/traffic-simulator",
+    liveUrl: "https://croccu.github.io/traffic-sim-build/",
     featured: true,
   },
   {
@@ -27,8 +35,8 @@ export const projects: Project[] = [
     title: "MRZ Validator",
     tagline: "Web tool for validating machine-readable zone codes",
     description:
-      "A lightweight web tool that validates MRZ (Machine Readable Zone) codes from identity documents. Performs check digit verification and field parsing according to ICAO 9303 standards. Built to streamline document verification workflows — directly inspired by real-world KYC and fraud prevention processes.",
-    images: ["/images/projects/mrz-validator-1.jpg"],
+      "A lightweight web tool that validates MRZ (Machine Readable Zone) codes from identity documents. Performs check digit verification and field parsing according to ICAO 9303 standards. Built to streamline document verification workflows — directly inspired by my own work in KYC.",
+    images: ["/images/projects/mrz-validator/mrz_validator.png"],
     techStack: ["Python", "Flask", "HTML/CSS"],
     githubUrl: "https://github.com/Croccu/mrz-validator",
     featured: true,
@@ -61,6 +69,17 @@ export const projects: Project[] = [
     images: ["/images/projects/hinnavaatlus-1.jpg"],
     techStack: ["TypeScript", "React", "Tailwind CSS"],
     githubUrl: "https://github.com/Croccu/hinnavaatlus_revamped",
+    featured: true,
+  },
+  {
+    slug: "color-game",
+    title: "Simon Says color game",
+    tagline: "Arduino-based memory game with lights and sound",
+    description:
+      "An interactive Simon Says memory game built with Arduino and C++. The system generates dynamic light and sound sequences using LEDs, buttons, and a buzzer, challenging players to replicate patterns with increasing difficulty.",
+    images: ["/images/projects/color-game/color-game.png"],
+    techStack: ["Arduino", "C++"],
+    githubUrl: "https://github.com/Croccu/simon-says-game",
     featured: true,
   },
 ];
