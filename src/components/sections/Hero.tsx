@@ -18,8 +18,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--background)_70%)]" />
       </div>
 
-      <Container className="relative z-10 lg:ml-[30%]">
-        <div className="flex flex-col items-center gap-10 lg:flex-row lg:justify-start lg:gap-16">
+      <Container className="relative z-10">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:justify-center lg:gap-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}

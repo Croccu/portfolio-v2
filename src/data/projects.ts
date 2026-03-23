@@ -64,17 +64,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "hinnavaatlus-revamped",
-    title: "Hinnavaatlus Revamped",
-    tagline: "Redesigned price comparison UI",
-    description:
-      "A modern redesign of the Hinnavaatlus price comparison platform, built as a UI/UX aesthetics course project at Tallinn University. Focused on clean typography, responsive layout, and improved information hierarchy compared to the original site.",
-    images: ["/images/projects/hinnavaatlus-1.jpg"],
-    techStack: ["TypeScript", "React", "Tailwind CSS"],
-    githubUrl: "https://github.com/Croccu/hinnavaatlus_revamped",
-    featured: true,
-  },
-  {
     slug: "color-game",
     title: "Simon Says color game",
     tagline: "Arduino-based memory game with lights and sound",
