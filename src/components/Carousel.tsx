@@ -57,6 +57,7 @@ export function Carousel({ images, alt, className }: CarouselProps) {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 1280px"
+                  quality={100}
                   priority={current === 0}
                 />
               </motion.div>

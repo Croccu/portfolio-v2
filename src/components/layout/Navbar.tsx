@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/data/site";
-import { Github, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -107,17 +107,8 @@ export function Navbar() {
           })}
         </ul>
 
-        {/* GitHub + mobile toggle */}
+        {/* Right spacer (matches logo width on desktop) + mobile toggle */}
         <div className="flex items-center gap-3">
-          <a
-            href={siteConfig.links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-            className="text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <Github className="h-4 w-4" />
-          </a>
           <button
             className="md:hidden text-muted-foreground transition-colors hover:text-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -149,6 +140,11 @@ export function Navbar() {
               )}
             </AnimatePresence>
           </button>
+          {/* Invisible spacer to balance logo width on desktop */}
+          <span className="hidden md:flex items-center gap-2.5 invisible">
+            <span className="h-7 w-7" />
+            <span className="text-sm font-semibold">{siteConfig.name}</span>
+          </span>
         </div>
       </nav>
 

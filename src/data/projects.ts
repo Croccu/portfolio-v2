@@ -74,4 +74,20 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Croccu/simon-says-game",
     featured: true,
   },
+  {
+    slug: "flashcards-app",
+    title: "Flashcards App",
+    tagline: "Interactive flashcard tool for exam prep",
+    description:
+      "A flashcard-based study tool built for Theoretical Informatics exam preparation. A lightweight solution for efficient review and practice accessible on all devices. Informatics concepts are rendered using KaTeX for clear visualization of formulas and equations.",
+    images: [
+      "/images/projects/flashcards-app/flashcards-home.png",
+      "/images/projects/flashcards-app/flashcards-answer.png",
+      "/images/projects/flashcards-app/flashcards-stats.png",
+    ],
+    techStack: ["JavaScript", "React", "CSS", "HTML"],
+    githubUrl: "https://github.com/Croccu/flashcards-app",
+    liveUrl: "https://croccu.github.io/flashcards-app/",
+    featured: true,
+  },
 ];
