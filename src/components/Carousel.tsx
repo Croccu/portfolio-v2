@@ -58,7 +58,7 @@ export function Carousel({ images, alt, className }: CarouselProps) {
   return (
     <div className={cn("flex flex-col items-center gap-3", className)}>
       <div className="flex min-h-0 flex-1 items-center justify-center w-full">
-        <div className="relative w-full aspect-video">
+        <div className="relative mx-auto h-full max-w-full aspect-video">
           <div
             className="absolute inset-0 overflow-hidden rounded-lg"
             onTouchStart={handleTouchStart}
