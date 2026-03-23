@@ -38,20 +38,10 @@ export function Carousel({ images, alt, className }: CarouselProps) {
   }
 
   return (
-    <div className={cn("flex flex-col items-center gap-4", className)}>
-      <div className="flex w-full items-center gap-3">
-        {hasMultiple && (
-          <button
-            onClick={prev}
-            className="shrink-0 rounded-full border border-border p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-            aria-label="Previous image"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-        )}
-
-        <div className="relative w-full overflow-hidden rounded-lg">
-          <div className="relative aspect-[16/8.5]">
+    <div className={cn("flex flex-col items-center gap-3", className)}>
+      <div className="flex min-h-0 flex-1 items-center justify-center">
+        <div className="relative mx-auto h-full max-w-full aspect-video">
+          <div className="absolute inset-0 overflow-hidden rounded-lg">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -65,24 +55,33 @@ export function Carousel({ images, alt, className }: CarouselProps) {
                   src={images[current]}
                   alt={`${alt} — image ${current + 1}`}
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 1280px"
                   priority={current === 0}
                 />
               </motion.div>
             </AnimatePresence>
           </div>
-        </div>
 
-        {hasMultiple && (
-          <button
-            onClick={next}
-            className="shrink-0 rounded-full border border-border p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-            aria-label="Next image"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
-        )}
+          {hasMultiple && (
+            <>
+              <button
+                onClick={prev}
+              className="absolute -left-15 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={next}
+              className="absolute -right-15 top-1/2 z-10 -translate-y-1/2 rounded-full border border-border p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                aria-label="Next image"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </>
+          )}
+        </div>
       </div>
 
       {hasMultiple && (
