@@ -61,6 +61,8 @@ export const projects: Project[] = [
     techStack: ["TypeScript", "Next.js", "Python", "Supabase", "Vercel"],
     githubUrl: "https://github.com/rakenduste-programmeerimine-2025/nutikas-ostukorv",
     liveUrl: "https://nutikas-ostukorv-deploy.vercel.app/",
+    warning:
+      "The live demo may appear empty or broken. Product data was loaded via local database migrations and is not available on the deployed version.",
     featured: true,
   },
   {
